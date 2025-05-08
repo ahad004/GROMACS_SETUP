@@ -1,0 +1,48 @@
+      *************************************************************************** GROMACS Installation using CPU ************************************************************************************************************************
+STEP by STEP GUIDLINES
+
+lets start.................
+
+                                                                                    SOME ESSENTIAL COMMAND TO REMEBER BRFORE GOING TO START
+1st Step: pdate the system
+sudo apt-get upadte
+
+2nd Step: Install cmake
+sudo apt-get install cmake
+
+3rd Step: Install build-essential
+sudo apt-get install build-essential
+
+
+NOW, Your sytem is ready to install Gromacs.............
+
+
+1. Download the Gromacs tar file [Frome here- https://www.gromacs.org/Downloads]
+or, use the command
+          wget ftp://ftp.gromacs.org/gromacs/gromacs-2025.1.tar.gz
+
+2. Unzip the file now
+          tar -xfz [File Name]
+
+3. now go to the Gromacs folder, using 
+          cd gromacs-2025.1/
+
+4. Make Directory inside the folder using the following commands,
+          mkdir build
+
+5. Now go to the build directory
+          cd build/
+
+6. Now we will build the source code for our system [For CPU user]
+          cmake .. -DGMX_OWN_FFTW=ON -DREGRESSIONTEST_DOWNLOAD=ON
+
+7. now compile the source code
+          make
+Then,
+          make check
+
+8. Final step to install the gromacs
+            sudo make install
+
+9. Now chem weather it is completely installed or not by using-
+            gmx
